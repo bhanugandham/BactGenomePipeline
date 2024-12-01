@@ -140,7 +140,7 @@ After running the pipeline, the following outputs will be generated:
 ---
 
 ## **License**
-This project is licensed under the MIT License - see the [LICENSE]() file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/bhanugandham/BactGenomePipeline/blob/main/LICENSE) file for details.
 
 ---
 
@@ -152,3 +152,5 @@ This pipeline integrates several tools, including:
 - **NanoPlot**, **Porechop**, **Filtlong**, and others for quality control and preprocessing.
 
 Special thanks to the authors of these tools for their contributions to bioinformatics.
+Feel free to adapt and extend this pipeline based on your needs. If you encounter issues or have suggestions for improvements, please open an issue on the GitHub repository.
+
