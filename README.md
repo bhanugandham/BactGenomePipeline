@@ -52,6 +52,7 @@ The pipeline uses multiple Conda environments for different steps. You can creat
 ```bash
 snakemake --use-conda --cores 4
 ```
+Snakemake will automatically create the required environments and install all dependencies as specified in the `environment` folder.
 
 ### **4. Install Conda Dependencies (if necessary)**
 
@@ -74,8 +75,8 @@ conda env create -f environment/annotation.yaml
 ## **Input Files**
 
 The pipeline expects the following input:
-- **FASTQ** file: Raw nanopore sequencing data (e.g., SRR30810013.fastq.gz).
-The input files should be placed in the data/ directory.
+- **FASTQ** file: Raw nanopore sequencing data (e.g., `SRR30810013.fastq.gz`).
+The input files should be placed in the `data/` directory.
 
 ---
 
@@ -99,13 +100,13 @@ The pipeline processes the data in a series of steps:
 ---
 
 ## **Configuration**
-The pipeline is configured using the config.yaml file. Below is an example configuration:
+The pipeline is configured using the `config.yaml` file. Below is an example configuration:
 
 ```bash
 samples:
   - SRR30810013
 ```
-The samples field defines the list of sample identifiers (usually the name of the input FASTQ file without the extension).
+The `samples` field defines the list of sample identifiers (usually the name of the input FASTQ file without the extension).
 
 ---
 
@@ -117,10 +118,10 @@ snakemake --use-conda --cores 4
 ```
 ### **Options** 
 
-- --use-code : Tells Snakemake to automatically create and manage the Conda environments for each rule.
-- --cores : The number of cores to use. Adjust according to your available hardware.
+- `--use-code` : Tells Snakemake to automatically create and manage the Conda environments for each rule.
+- `--cores` : The number of cores to use. Adjust according to your available hardware.
 
-This command will process the input data, perform the necessary preprocessing, assembly, and annotation, and store the results in the results/ directory.
+This command will process the input data, perform the necessary preprocessing, assembly, and annotation, and store the results in the `results/` directory.
 
 ---
 
@@ -128,18 +129,18 @@ This command will process the input data, perform the necessary preprocessing, a
 
 After running the pipeline, the following outputs will be generated:
 - **Genome Assembly**:
-  - results/assembly/polished_1.fasta: The final polished genome assembly.
+  - `results/assembly/polished_1.fasta`: The final polished genome assembly.
 - **Genome Annotation**:
-  - results/annotation/annotated.gbk: GenBank format annotated genome.
-  - results/annotation/annotated.gff: GFF format annotated genome.
+  - `results/annotation/annotated.gbk`: GenBank format annotated genome.
+  - `results/annotation/annotated.gff`: GFF format annotated genome.
 - **Reports**:
-  - results/raw_statreports: NanoPlot quality reports for raw reads.
-  - results/filtered_statreports: NanoPlot quality reports for filtered reads.
+  - `results/raw_statreports`: NanoPlot quality reports for raw reads.
+  - `results/filtered_statreports`: NanoPlot quality reports for filtered reads.
 
 ---
 
 ## **License**
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE]() file for details.
 
 ---
 
