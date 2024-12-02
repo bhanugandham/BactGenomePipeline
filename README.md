@@ -50,7 +50,7 @@ conda install -c bioconda -c conda-forge snakemake -y
 
 The pipeline uses multiple Conda environments for different steps. You can create and activate them using the following command:
 ```bash
-snakemake --use-conda --cores 4
+snakemake --use-conda --conda-create-envs-only
 ```
 Snakemake will automatically create the required environments and install all dependencies as specified in the `environment` folder.
 
