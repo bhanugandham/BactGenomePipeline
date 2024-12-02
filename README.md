@@ -114,14 +114,17 @@ The `samples` field defines the list of sample identifiers (usually the name of 
 To run the pipeline, execute the following command from the project directory:
 
 ```bash
-snakemake --use-conda --cores 4
+snakemake --use-conda --cores 16 --jobs 16 --scheduler greedy -p
 ```
 ### **Options** 
 
-- `--use-code` : Tells Snakemake to automatically create and manage the Conda environments for each rule.
-- `--cores` : The number of cores to use. Adjust according to your available hardware.
+- `--use-code` : Uses conda environments specified in the Snakefile.
+- `--cores` : Allocates 16 CPU cores for execution. Adjust according to your available hardware.
+- `--jobs 16`: Specifies that 16 jobs can be run in parallel.
+- `--scheduler greedy`: Uses the "greedy" scheduler, which resolves jobs in a more flexible manner and can help avoid certain issues during scheduling.
+- `-p`: Prints the commands as they are executed.
 
-This command will process the input data, perform the necessary preprocessing, assembly, and annotation, and store the results in the `results/` directory.
+This command will process the input data, perform the necessary preprocessing, assembly, and annotation, and store the results in the `results/` directory. Additionally, this configuration ensures that the pipeline runs efficiently while utilizing available resources.
 
 ---
 
