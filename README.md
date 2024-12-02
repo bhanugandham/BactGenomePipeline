@@ -132,13 +132,13 @@ This command will process the input data, perform the necessary preprocessing, a
 
 After running the pipeline, the following outputs will be generated:
 - **Genome Assembly**:
-  - `results/assembly/polished_1.fasta`: The final polished genome assembly.
+  - `results/SRR30810013/assembly/polished_1.fasta`: The final polished genome assembly.
 - **Genome Annotation**:
-  - `results/annotation/annotated.gbk`: GenBank format annotated genome.
-  - `results/annotation/annotated.gff`: GFF format annotated genome.
+  - `results/SRR30810013/annotation/annotated.gbk`: GenBank format annotated genome.
+  - `results/SRR30810013/annotation/annotated.gff`: GFF format annotated genome.
 - **Reports**:
-  - `results/raw_statreports`: NanoPlot quality reports for raw reads.
-  - `results/filtered_statreports`: NanoPlot quality reports for filtered reads.
+  - `results/SRR30810013/raw_statreports`: NanoPlot quality reports for raw reads.
+  - `results/SRR30810013/filtered_statreports`: NanoPlot quality reports for filtered reads.
 
 ---
 
