@@ -43,7 +43,7 @@ cd <repository_name>
 
 Ensure that Snakemake is installed:
 ```bash
-conda install -c bioconda -c conda-forge snakemake -y
+conda create -c conda-forge -c bioconda -n snakemake snakemake -y
 ```
 
 ### **3. Create the Conda Environments**
