@@ -1,6 +1,6 @@
 # **BactGenomePipeline: Bacterial Genome Annotation Pipeline**
 
-**BactGenomePipeline** is a streamlined Snakemake pipeline designed to annotate bacterial genomes starting from raw FASTQ reads. The pipeline uses popular bioinformatics tools like **Flye**, **Prokka**, **NanoPlot**, **Porechop**, **Filtlong**, and others to process, assemble, and annotate bacterial genomes.
+**BactGenomePipeline** is a streamlined Snakemake pipeline designed to annotate bacterial genomes starting from raw FASTQ reads. The pipeline uses popular bioinformatics tools like **Flye**, **Prokka**, **NanoPlot**, **Porechop**, **Filtlong**, and others to QC, assemble, and annotate bacterial genomes.
 
 ---
 
