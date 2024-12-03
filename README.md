@@ -44,6 +44,7 @@ cd BactGenomePipeline
 Ensure that Snakemake is installed:
 ```bash
 conda create -c conda-forge -c bioconda -n snakemake snakemake -y
+conda activate snakemake
 ```
 
 ### **3. Create the Conda Environments**
