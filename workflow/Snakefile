@@ -8,7 +8,6 @@ rule all:
             [
                 "results/{sample}/raw_statreports",
                 "results/{sample}/filtered_statreports",
-                "results/{sample}/assembly/assembly.fasta",
                 "results/{sample}/annotation/annotated.gbk",
                 "results/{sample}/annotation/annotated.gff"
 
@@ -79,17 +78,19 @@ rule flye:
     input:
         fastq="results/{sample}/subsampled.fastq"
     output:
-        fasta="results/{sample}/assembly/assembly.fasta"
+        fasta="results/{sample}/assembly/polished_1.fasta"
     log:
         "logs/{sample}_flye.log"
+    params:
+        polish_target=config["flye"]["polish_target"]
     conda:
         "environment/assembly.yaml"
     shell:
-        "flye --nano-raw {input.fastq} --out-dir results/{wildcards.sample}/assembly --threads 32 --genome-size 4.6M"
+        "flye --nano-raw {input.fastq} --out-dir results/{wildcards.sample}/assembly --threads 32 --genome-size 4.6M --polish-target {params.polish_target}"
 
 rule prokka:
     input:
-        fasta="results/{sample}/assembly/assembly.fasta"
+        fasta="results/{sample}/assembly/polished_1.fasta"
     output:
         gbk="results/{sample}/annotation/annotated.gbk",
         gff="results/{sample}/annotation/annotated.gff"
