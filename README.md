@@ -79,7 +79,7 @@ The pipeline expects the following input:
 - **FASTQ** file: Raw nanopore sequencing data (e.g., `SRR30810013.fastq.gz`).
 
 ### Note:
-The `data/` folder initially contains only an empty file. To successfully run the pipeline:
+The `data/` folder in this repo contains only an empty/placeholder file. To successfully run the pipeline:
 
 1. Add the FASTQ files (compressed in `.fastq.gz` format) to the `data/` folder.
 2. Update the `config.yaml` file to include the respective sample prefix under the `samples` field.
