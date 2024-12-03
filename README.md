@@ -100,7 +100,7 @@ The pipeline processes the data in a series of steps:
 
 ### **2. Genome Assembly**
 
-- **Flye**: Assembles the genome using nanopore raw reads. This step requires a sample file for the genome size and target genome.
+- **Flye**: Assembles the genome using nanopore raw reads. This step requires a reference file for the genome size and target genome.
 
 ### **3. Genome Annotation**
 
@@ -114,6 +114,10 @@ The pipeline is configured using the `config.yaml` file. Below is an example con
 ```bash
 samples:
   - SRR30810013
+
+flye:
+  polish_target: "reference/GCF_000005845.2_ASM584v2_genomic.fasta"
+
 ```
 The `samples` field defines the list of sample identifiers (usually the name of the input FASTQ file without the extension).
 
