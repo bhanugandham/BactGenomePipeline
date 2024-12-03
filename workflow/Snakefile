@@ -10,7 +10,7 @@ rule all:
                 "results/{sample}/filtered_statreports",
                 "results/{sample}/assembly/assembly.fasta",
                 "results/{sample}/annotation/annotated.gbk",
-                "results/{sample}/annotation/annotated.gtf"
+                "results/{sample}/annotation/annotated.gff"
 
             ],
             sample=config["samples"])
@@ -92,7 +92,7 @@ rule prokka:
         fasta="results/{sample}/assembly/assembly.fasta"
     output:
         gbk="results/{sample}/annotation/annotated.gbk",
-        gtf="results/{sample}/annotation/annotated.gtf"
+        gff="results/{sample}/annotation/annotated.gff"
     log:
         "logs/{sample}_prokka.log"
     conda:
