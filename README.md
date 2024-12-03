@@ -137,6 +137,7 @@ snakemake --use-conda --cores 16 --jobs 16 --scheduler greedy -p --rerun-incompl
 - `--jobs 16`: Specifies that 16 jobs can be run in parallel.
 - `--scheduler greedy`: Uses the "greedy" scheduler, which resolves jobs in a more flexible manner and can help avoid certain issues during scheduling.
 - `-p`: Prints the commands as they are executed.
+- `--rerun-incomplete`: Ensures that jobs with incomplete outputs are re-executed. This is critical for workflow reliability after interruptions.
 
 This command will process the input data, perform the necessary preprocessing, assembly, and annotation, and store the results in the `results/` directory. Additionally, this configuration ensures that the pipeline runs efficiently while utilizing available resources.
 
