@@ -120,7 +120,7 @@ flye:
 
 ```
 The `samples` field defines the list of sample identifiers (usually the name of the input FASTQ file without the extension).
-The `flye` field defines the flye parameters.
+The `flye` field defines the flye polish target parameter.
 
 ---
 
