@@ -6,10 +6,11 @@ rule all:
     input:
         expand(
             [
-                "results/{sample}/assembly/assembly.fasta",
                 "results/{sample}/raw_statreports",
                 "results/{sample}/filtered_statreports",
-                "results/{sample}/annotation"
+                "results/{sample}/assembly/assembly.fasta",
+                "results/{sample}/annotation/annotated.gbk",
+                "results/{sample}/annotation/annotated.gtf"
 
             ],
             sample=config["samples"])
@@ -90,12 +91,13 @@ rule prokka:
     input:
         fasta="results/{sample}/assembly/assembly.fasta"
     output:
-        dir=directory("results/{sample}/annotation")
+        gbk="results/{sample}/annotation/annotated.gbk",
+        gtf="results/{sample}/annotation/annotated.gtf"
     log:
         "logs/{sample}_prokka.log"
     conda:
         "environment/annotation.yaml"
     shell:
-        "prokka --outdir {output.dir} --prefix annotated --genus Escherichia --species coli --cpus 4 {input.fasta}"
+        "prokka --outdir results/{wildcards.sample}/annotation --prefix annotated --genus Escherichia --species coli --cpus 4  --force {input.fasta}"
 
 
