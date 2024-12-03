@@ -76,7 +76,15 @@ conda env create -f environment/annotation.yaml
 
 The pipeline expects the following input:
 - **FASTQ** file: Raw nanopore sequencing data (e.g., `SRR30810013.fastq.gz`).
-The input files should be placed in the `data/` directory.
+
+### Note:
+The `data/` folder initially contains only an empty file. To successfully run the pipeline:
+
+1. Add the FASTQ files (compressed in `.fastq.gz` format) to the `data/` folder.
+2. Update the `config.yaml` file to include the respective sample prefix under the `samples` field.
+3. Run the pipeline as described in the [Running the Pipeline](#running-the-pipeline) section.
+
+Once the pipeline completes, the results will be generated in the `results/` folder. Ensure that the sample prefixes in `config.yaml` match the names of the input files in the `data/` folder.
 
 ---
 
