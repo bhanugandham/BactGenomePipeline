@@ -19,6 +19,8 @@ rule nanoplot_raw:
         fastq="data/{sample}.fastq.gz"
     output:
         dir=directory("results/{sample}/raw_statreports")
+    log:
+        "logs/{sample}_nanoplot_raw.log"
     conda:
         "environment/preprocessing.yaml"
     shell:
@@ -29,6 +31,8 @@ rule porechop:
         fastq="data/{sample}.fastq.gz"
     output:
         fastq="results/{sample}/chopped.fastq.gz"
+    log:
+        "logs/{sample}_porechop.log"
     conda:
         "environment/preprocessing.yaml"
     shell:
@@ -39,6 +43,8 @@ rule filtlong:
         fastq="results/{sample}/chopped.fastq.gz"
     output:
         fastq="results/{sample}/filtered.fastq.gz"
+    log:
+        "logs/{sample}_filtlong.log"
     conda:
         "environment/preprocessing.yaml"
     shell:
@@ -49,6 +55,8 @@ rule nanoplot_filtered:
         fastq="results/{sample}/filtered.fastq.gz"
     output:
         dir=directory("results/{sample}/filtered_statreports")
+    log:
+        "logs/{sample}_nanoplot_filtered.log"
     conda:
         "environment/preprocessing.yaml"
     shell:
@@ -59,6 +67,8 @@ rule seqtk_subsample:
         fastq="results/{sample}/filtered.fastq.gz"
     output:
         fastq="results/{sample}/subsampled.fastq"
+    log:
+        "logs/{sample}_seqtk_subsample.log"
     conda:
         "environment/preprocessing.yaml"
     shell:
@@ -69,6 +79,8 @@ rule flye:
         fastq="results/{sample}/subsampled.fastq"
     output:
         fasta="results/{sample}/assembly/assembly.fasta"
+    log:
+        "logs/{sample}_flye.log"
     conda:
         "environment/assembly.yaml"
     shell:
@@ -79,6 +91,8 @@ rule prokka:
         fasta="results/{sample}/assembly/assembly.fasta"
     output:
         dir=directory("results/{sample}/annotation")
+    log:
+        "logs/{sample}_prokka.log"
     conda:
         "environment/annotation.yaml"
     shell:
