@@ -1,2 +1,6 @@
 samples:
   - SRR30810013
+
+flye:
+  polish_target: "reference/GCF_000005845.2_ASM584v2_genomic.fasta"
+
