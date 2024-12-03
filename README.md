@@ -35,8 +35,8 @@ To set up and run this pipeline, follow these steps:
 
 Clone the GitHub repository to your local machine:
 ```bash
-git clone <repository_url>
-cd <repository_name>
+git clone git@github.com:bhanugandham/BactGenomePipeline.git
+cd BactGenomePipeline
 ```
 
 ### **2. Install Snakemake**
