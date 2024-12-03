@@ -123,7 +123,7 @@ The `samples` field defines the list of sample identifiers (usually the name of 
 To run the pipeline, execute the following command from the project directory:
 
 ```bash
-snakemake --use-conda --cores 16 --jobs 16 --scheduler greedy -p
+snakemake --use-conda --cores 16 --jobs 16 --scheduler greedy -p --rerun-incomplete
 ```
 ### **Options** 
 
